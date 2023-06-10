@@ -12,15 +12,14 @@ body {
     text-align: center;
 }
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
   color: rgb(167, 186, 186);
-  display: flex;
-  gap: 15px;
+  display: inline-flex;
+  gap: 20px;
+  text-align: center;
 }
 li {
   display: inline;
+  text-align: center;
 }
 /* Text and Font */ 
 a  {
@@ -37,6 +36,10 @@ p {
 p, span{
   display:inline;
 }
+
+hr {
+  opacity: calc(25%);
+}
 /* Sections */ 
 #type {
     color: rgb(132, 81, 208);
@@ -44,7 +47,7 @@ p, span{
 }
 
 #text {
-    margin-top: 150px;
+    margin-top: 125px;
 }
 #languages {
     display: inline-flex;
@@ -55,6 +58,9 @@ p, span{
   display: inline-flex;
     gap: 55px;
     text-align: center;
+}
+#nav {
+  text-align: center;
 }
 /* Image */ 
 img {
@@ -83,10 +89,11 @@ img {
     </head>
         <section id="NAV">
             <ul>
-                <li><a href="#"target="_blank">What can I do?</a></li>
-                <li><a href="https://teflonjosh.github.io/Resource-Guide-Project/"target="_blank">Portfolio/Projects</a></li>
-                <li><a href="mailto:josh.michael.hill@gmail.com">Contact Me!</a></li>
+                |<li><a href="#"target="_blank">What can I do?</a></li>|
+                <li><a href="https://teflonjosh.github.io/Resource-Guide-Project/"target="_blank">Portfolio/Projects</a></li>|
+                <li><a href="mailto:josh.michael.hill@gmail.com">Contact Me!</a></li>|
             </ul>
+              <hr>
         </section>
     <section id="text">
         <p>Welcome! I'm Josh and </p><p id="type"></p> <span class="blinking-cursor"> | </span>
