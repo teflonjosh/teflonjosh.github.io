@@ -1,31 +1,148 @@
-<!DOCTYPE HTML>
-  <html>
- <!--Head and MetaData-->
-    <head>
-      <tilte> Teflon Josh </title>
- <style>
-body {
-  background-color:grey;
-  color: black;
-  text-align: center; 
+<!DOCTYPE html>
+    <html>  
+        <head>
+            <title>Joshua</title>
+        <link rel="icon" href="/home/josh/Downloads/wolf-min.png">
+  <style>
+/* Page Specs */ 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: rgb(167, 186, 186);
+  display: flex;
+  gap: 15px;
 }
-  </style>
+li {
+  display: inline;
+}
+a:hover {
+  color: rgb(132, 81, 208);
+  font-size: 115%;
+}
+a  {
+    color: rgb(167, 186, 186);
+    text-decoration: none;
+}
+p {
+    font-size: large;
+}
+body {
+    background-color: #0a0d2a;
+    color: rgb(167, 186, 186);
+    text-align: center;
+}
+#type {
+    color: rgb(132, 81, 208);
+    font-weight: bolder;
+}
+.nav-header {
+  text-align: center;
+  position: sticky;
+  max-width: auto;
+  top: 0;
+  left: 0;
+}
+#text {
+    margin-top: 150px;
+}
+#languages {
+    display: inline-flex;
+    gap: 15px;
+    text-align: center;
+}
+#social {
+  display: inline-flex;
+    gap: 55px;
+    text-align: center;
+}
+/* Curser in Loop */ 
+.blinking-cursor {
+  color: rgb(132, 81, 208);
+  animation: .99s blink step-end infinite;
+}
+@keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: rgb(132, 81, 208);
+  }
+}
+p, span{
+  display:inline;
+}
+
+</style>
     </head>
-<!--Header-->
-<header>
-  </header>
-<!--Content-->
-<body>
-  <h1>Under Construction</h1>
+        <section id="NAV">
+            <ul>
+                <li><a href="#">What can I do?</a></li>
+                <li><a href="https://teflonjosh.github.io/Resource-Guide-Project/">Portfolio/Projects</a></li>
+                <li><a href="mailto:josh.michael.hill@gmail.com">Contact Me!</a></li>
+            </ul>
+        </section>
+
+    <section id="text">
+        <p>Welcome! I'm Josh and </p><p id="type"></p> <span class="blinking-cursor"> | </span>
+    </section>
 <br>
-    <p><emPortfolio Under Construction. Please check back soon.</em></p>
-<!--IMG-->
-      <figure>
-        <img src="https://c1.peakpx.com/wallpaper/212/679/686/kermit-first-aid-injured-association-wallpaper-preview.jpg"/>
-          <figcaption>Licensed under creative commons. Image via <a href="https://www.peakpx.com">Peakpx</a></figcaption>
-      </figure>
-<!--Footer-->
-  <footer>
-    </footer>
-  </body>
+    <section id="image">
+        <img src="file:///home/josh/Desktop/Josh.jpg" style="width:155px;height:155px;border-radius: 55%;border: 5px solid rgb(167, 186, 186);">
+    </section>
+  <br>
+    <section id="social">
+      <li><a href="https://github.com/teflonjosh"target="_blank">github</a></li>
+      <li><a href="https://www.linkedin.com/in/joshua-michael-hill/"target="_blank">LinkedIn</a></li>
+    </section>
+
+<!--Script for Type Effect-->
+  <script>
+// Messages to loop
+    const messages = [
+      "I'm a Web Designer/Developer",
+      "I'm a Programmer",
+      "I'm a Data-Enthusiast",
+      "I have a background in ad tech and market research",
+      "I would like you to take a look at my work",
+      "I would love for you to get in touch!"
+    ];
+// DOM
+    const typewriterElement = document.getElementById("type");
+    let messageIndex = 0;
+// Current Message Function
+    function typeMessage() {
+      const currentMessage = messages[messageIndex];
+// Set interval for messages ++ APPLY
+      let charIndex = 0;
+      const typeInterval = setInterval(() => {
+        typewriterElement.textContent += currentMessage.charAt(charIndex);
+        charIndex++;
+// set index to current message
+        if (charIndex === currentMessage.length) {
+          clearInterval(typeInterval);
+          setTimeout(eraseMessage, 2500);
+        }
+      }, 100);
+    }
+// clear current message
+    function eraseMessage() {
+      const currentMessage = messages[messageIndex];
+// Set interval for messages -- REMOVE
+      let charIndex = currentMessage.length - 1;
+      const eraseInterval = setInterval(() => {
+        typewriterElement.textContent = typewriterElement.textContent.slice(0, charIndex);
+        charIndex--;
+// set index to current message / Move to NEXT / Set Interval Time
+        if (charIndex === -1) {
+          clearInterval(eraseInterval);
+          messageIndex = (messageIndex + 1) % messages.length; 
+          setTimeout(typeMessage, 200);
+        }
+      }, 50);
+    }
+// CALL FUNCTION
+    typeMessage();  
+  </script>
+</body>
 </html>
